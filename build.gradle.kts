@@ -3,6 +3,7 @@ repositories {
 }
 
 private val kotlinVersion = "1.8.21"
+private val kotlinCoroutinesVersion = "1.7.0-RC"
 private val kotestVersion = "5.6.1"
 
 plugins {
@@ -17,8 +18,9 @@ private val kotestPkgs = listOf(
 )
 
 dependencies {
-    kotestPkgs.map { testImplementation(it) }
     implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion")
+    kotestPkgs.map { testImplementation(it) }
 }
 
 kotlin {
