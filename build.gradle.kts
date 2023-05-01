@@ -27,6 +27,10 @@ kotlin {
     jvmToolchain(17)
 }
 
+application {
+    mainClass.set("com.chronojobber.MainKt")
+}
+
 tasks {
     withType<Test>().configureEach {
         useJUnitPlatform()
