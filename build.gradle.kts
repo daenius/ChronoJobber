@@ -14,12 +14,14 @@ plugins {
 private val kotestPkgs = listOf(
     "io.kotest:kotest-runner-junit5:$kotestVersion",
     "io.kotest:kotest-assertions-core:$kotestVersion",
+    "io.kotest:kotest-property:$kotestVersion",
     "io.kotest:kotest-property:$kotestVersion"
 )
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinCoroutinesVersion")
     kotestPkgs.map { testImplementation(it) }
 }
 
